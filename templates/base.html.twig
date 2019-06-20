@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>
+            {% block title %}
+                Заголовок
+            {% endblock %}
+        </title>
+            {% block description %}
+                <meta name="description" content="описание">
+            {% endblock %}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        {% block stylesheets %}
+            <link href="{{ asset('css/main.css') }}" rel="stylesheet" />
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+
+    <body>
+      <div class="wrapper">
+
+
+          <header>
+              <div class="logo">
+                  <a href="{{ path('index') }}">
+                  </a>
+              </div>
+              <div class="top-menu">
+                {% block menu %}
+
+
+                {% endblock %}
+                </div>
+          </header>
+          <div class="login-bar">
+            <div class="search-bar">
+                <div class="search">
+                </div>
+                <div class="search_result">
+                    <div class="search_result_items">
+                    </div>
+                </div>
+            </div>
+            <div class="login-bar-block">
+            </div>
+          </div>
+          <div class="content">
+
+                        {% block sidebar %}
+                        {% endblock %}
+                        {% block content %}
+                        {% endblock %}
+
+        </div>
+            <footer>
+              <table class="footer">
+                <tr class="footer-bottom">
+                  <td>© SokolTeam 2012-{{ "now" | date("Y") }}</td>
+                  <td>
+                    <div class="footer-question">
+                      Вопросы и предложения присылайте
+                        <a href="mailto:info@sokolstat.ru">сюда</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </footer>
+      </div>
+   </body>
+</html>
